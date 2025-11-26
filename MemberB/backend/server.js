@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 // Database connection with better timeout and error handling
 const connectDB = async () => {
   try {
-    const mongoURI = process.env.MONGODB_URIB || 'mongodb://localhost:27017/lendify';
+    const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://zervic:zervic1@cluster0.v8zubag.mongodb.net/lendify?retryWrites=true&w=majority';
     console.log('Attempting to connect to MongoDB...');
     
     await mongoose.connect(mongoURI, {
