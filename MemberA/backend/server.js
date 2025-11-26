@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 // Database connection with better timeout and error handling
 const connectDB = async () => {
   try {
-    const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/lendify';
+    const mongoURI = process.env.MONGODB_URIA || 'mongodb://localhost:27017/lendify';
     console.log('Attempting to connect to MongoDB...');
     
     await mongoose.connect(mongoURI, {
@@ -56,7 +56,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORTA || 5000;
 app.listen(PORT, () => {
   console.log(`Member A Backend server running on port ${PORT}`);
 });
