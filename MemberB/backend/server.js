@@ -55,9 +55,9 @@ app.use((err, req, res, next) => {
   });
 });
 
-const PORT = process.env.PORTB || 5001;
-app.listen(PORT, () => {
-  console.log(`Member B Backend server running on port ${PORT}`);
+const PORT = process.env.PORT || 5001;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server listening on 0.0.0.0:${PORT}`);
 });
 
 module.exports = app;
