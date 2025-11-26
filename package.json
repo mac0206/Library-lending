@@ -17,7 +17,7 @@
     "dev:b": "cd \"Member B/backend\" && npm run dev",
     "dev:c": "cd \"Member C/backend\" && npm run dev",
 
-    "build:backend": "cd Member A/backend && npm install && cd ../Member B/backend && npm install && cd ../Member C/backend && npm install",
+    "build:backend": "cd MemberA/backend && npm install && cd ../MemberB/backend && npm install && cd ../MemberC/backend && npm install",
     "build:frontend": "cd frontend && npm install && npm run build",
     "build": "npm run build:backend && npm run build:frontend"
   },
