@@ -15,7 +15,11 @@
     "frontend": "cd frontend && npm start",
     "dev:a": "cd \"Member A/backend\" && npm run dev",
     "dev:b": "cd \"Member B/backend\" && npm run dev",
-    "dev:c": "cd \"Member C/backend\" && npm run dev"
+    "dev:c": "cd \"Member C/backend\" && npm run dev",
+
+    "build:backend": "cd Member A/backend && npm install && cd ../Member B/backend && npm install && cd ../Member C/backend && npm install",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "build": "npm run build:backend && npm run build:frontend"
   },
   "keywords": ["lending", "platform", "catalog", "dashboard"],
   "author": "",
@@ -25,4 +29,3 @@
     "cross-env": "^7.0.3"
   }
 }
-
