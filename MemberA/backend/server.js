@@ -47,7 +47,7 @@ app.use((err, req, res, next) => {
 });
 
 // Use PORT from environment (provided by Render), fallback to 5000 for local dev
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORTA || 5000;
 // Bind to '0.0.0.0' to accept external HTTP traffic (Render requires this) :contentReference[oaicite:2]{index=2}
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server listening on 0.0.0.0:${PORT}`);
