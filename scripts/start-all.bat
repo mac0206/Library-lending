@@ -2,19 +2,19 @@
 echo 🚀 Starting all Lendify services...
 echo.
 
-REM Copy .env files if they exist
-if exist ".env\MemberA.env" (
-    copy ".env\MemberA.env" "Member A\backend\.env" >nul
-    echo ✓ Copied MemberA.env to Member A/backend/.env
-)
-if exist ".env\MemberB.env" (
-    copy ".env\MemberB.env" "Member B\backend\.env" >nul
-    echo ✓ Copied MemberB.env to Member B/backend/.env
-)
-if exist ".env\MemberC.env" (
-    copy ".env\MemberC.env" "Member C\backend\.env" >nul
-    echo ✓ Copied MemberC.env to Member C/backend/.env
-)
+@REM REM Copy .env files if they exist
+@REM if exist ".env\MemberA.env" (
+@REM     copy ".env\MemberA.env" "Member A\backend\.env" >nul
+@REM     echo ✓ Copied MemberA.env to Member A/backend/.env
+@REM )
+@REM if exist ".env\MemberB.env" (
+@REM     copy ".env\MemberB.env" "Member B\backend\.env" >nul
+@REM     echo ✓ Copied MemberB.env to Member B/backend/.env
+@REM )
+@REM if exist ".env\MemberC.env" (
+@REM     copy ".env\MemberC.env" "Member C\backend\.env" >nul
+@REM     echo ✓ Copied MemberC.env to Member C/backend/.env
+@REM )
 
 echo.
 echo Starting all services...

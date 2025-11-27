@@ -22,26 +22,26 @@ function Start-Service {
 }
 
 # Copy .env files if they exist
-$envFolder = Join-Path $PSScriptRoot "..\.env"
-$backends = @(
-    @{ Name = "Member A"; EnvFile = "MemberA.env"; BackendPath = Join-Path $PSScriptRoot "..\Member A\backend" },
-    @{ Name = "Member B"; EnvFile = "MemberB.env"; BackendPath = Join-Path $PSScriptRoot "..\Member B\backend" },
-    @{ Name = "Member C"; EnvFile = "MemberC.env"; BackendPath = Join-Path $PSScriptRoot "..\Member C\backend" }
-)
+# $envFolder = Join-Path $PSScriptRoot "..\.env"
+# $backends = @(
+#     @{ Name = "Member A"; EnvFile = "MemberA.env"; BackendPath = Join-Path $PSScriptRoot "..\Member A\backend" },
+#     @{ Name = "Member B"; EnvFile = "MemberB.env"; BackendPath = Join-Path $PSScriptRoot "..\Member B\backend" },
+#     @{ Name = "Member C"; EnvFile = "MemberC.env"; BackendPath = Join-Path $PSScriptRoot "..\Member C\backend" }
+# )
 
-foreach ($backend in $backends) {
-    $envFile = Join-Path $envFolder $backend.EnvFile
-    $targetEnv = Join-Path $backend.BackendPath ".env"
+# foreach ($backend in $backends) {
+#     $envFile = Join-Path $envFolder $backend.EnvFile
+#     $targetEnv = Join-Path $backend.BackendPath ".env"
     
-    if (Test-Path $envFile) {
-        if (-not (Test-Path $targetEnv)) {
-            Copy-Item $envFile $targetEnv
-            Write-Host "✓ Copied $($backend.EnvFile) to $($backend.Name)/backend/.env" -ForegroundColor Green
-        }
-    } else {
-        Write-Host "⚠ Warning: $($backend.EnvFile) not found in .env folder" -ForegroundColor Yellow
-    }
-}
+#     if (Test-Path $envFile) {
+#         if (-not (Test-Path $targetEnv)) {
+#             Copy-Item $envFile $targetEnv
+#             Write-Host "✓ Copied $($backend.EnvFile) to $($backend.Name)/backend/.env" -ForegroundColor Green
+#         }
+#     } else {
+#         Write-Host "⚠ Warning: $($backend.EnvFile) not found in .env folder" -ForegroundColor Yellow
+#     }
+# }
 
 # Start all services
 $processes = @()
