@@ -16,7 +16,6 @@
     "dev:a": "npm --prefix ./MemberA/backend run dev",
     "dev:b": "npm --prefix ./MemberB/backend run dev",
     "dev:c": "npm --prefix ./MemberC/backend run dev",
-
     "build:backend": "echo \"No backend build step\"",
     "build:frontend": "npm --prefix ./frontend install && npm --prefix ./frontend run build",
     "build": "npm run install:all && npm run build:frontend"
