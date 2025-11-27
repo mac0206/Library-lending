@@ -5,14 +5,14 @@ const path = require('path');
 const isDev = process.argv[2] === 'dev';
 
 // Check if .env files exist and copy them
-const envFolder = path.join(__dirname, '..', '.env');
-const backendFolders = [
-  { name: 'membera', folder: path.join(__dirname, '..', 'membera', 'backend') },
-  { name: 'memberb', folder: path.join(__dirname, '..', 'memberb', 'backend') },
-  { name: 'memberc', folder: path.join(__dirname, '..', 'memberc', 'backend') },
-];
+// const envFolder = path.join(__dirname, '..', '.env');
+// const backendFolders = [
+//   { name: 'membera', folder: path.join(__dirname, '..', 'membera', 'backend') },
+//   { name: 'memberb', folder: path.join(__dirname, '..', 'memberb', 'backend') },
+//   { name: 'memberc', folder: path.join(__dirname, '..', 'memberc', 'backend') },
+// ];
 
-// Copy .env files if they exist
+/*// Copy .env files if they exist
 backendFolders.forEach((backend, index) => {
   const envFileName = index === 0 ? 'membera.env' : index === 1 ? 'memberb.env' : 'memberc.env';
   const envFile = path.join(envFolder, envFileName);
@@ -27,6 +27,11 @@ backendFolders.forEach((backend, index) => {
     console.warn(`   Expected at: ${envFile}`);
   }
 });
+
+// After copying (or before starting server), load .env:
+require('dotenv').config({ path: path.join(__dirname, '.env') });
+
+*/
 
 // Start all services
 console.log('🚀 Starting all Lendify services...\n');
