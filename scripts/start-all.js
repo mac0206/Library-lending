@@ -7,14 +7,14 @@ const isDev = process.argv[2] === 'dev';
 // Check if .env files exist and copy them
 const envFolder = path.join(__dirname, '..', '.env');
 const backendFolders = [
-  { name: 'Member A', folder: path.join(__dirname, '..', 'Member A', 'backend') },
-  { name: 'Member B', folder: path.join(__dirname, '..', 'Member B', 'backend') },
-  { name: 'Member C', folder: path.join(__dirname, '..', 'Member C', 'backend') },
+  { name: 'membera', folder: path.join(__dirname, '..', 'membera', 'backend') },
+  { name: 'memberb', folder: path.join(__dirname, '..', 'memberb', 'backend') },
+  { name: 'memberc', folder: path.join(__dirname, '..', 'memberc', 'backend') },
 ];
 
 // Copy .env files if they exist
 backendFolders.forEach((backend, index) => {
-  const envFileName = index === 0 ? 'MemberA.env' : index === 1 ? 'MemberB.env' : 'MemberC.env';
+  const envFileName = index === 0 ? 'membera.env' : index === 1 ? 'memberb.env' : 'memberc.env';
   const envFile = path.join(envFolder, envFileName);
   const targetEnv = path.join(backend.folder, '.env');
 
@@ -33,24 +33,24 @@ console.log('🚀 Starting all Lendify services...\n');
 
 const commands = [
   {
-    name: 'Member A Backend',
+    name: 'membera Backend',
     command: isDev ? 'npm' : 'npm',
     args: isDev ? ['run', 'dev'] : ['start'],
-    cwd: path.join(__dirname, '..', 'Member A', 'backend'),
+    cwd: path.join(__dirname, '..', 'membera', 'backend'),
     color: '\x1b[36m', // Cyan
   },
   {
-    name: 'Member B Backend',
+    name: 'memberb Backend',
     command: isDev ? 'npm' : 'npm',
     args: isDev ? ['run', 'dev'] : ['start'],
-    cwd: path.join(__dirname, '..', 'Member B', 'backend'),
+    cwd: path.join(__dirname, '..', 'memberb', 'backend'),
     color: '\x1b[32m', // Green
   },
   {
-    name: 'Member C Backend',
+    name: 'memberc Backend',
     command: isDev ? 'npm' : 'npm',
     args: isDev ? ['run', 'dev'] : ['start'],
-    cwd: path.join(__dirname, '..', 'Member C', 'backend'),
+    cwd: path.join(__dirname, '..', 'memberc', 'backend'),
     color: '\x1b[33m', // Yellow
   },
   {
